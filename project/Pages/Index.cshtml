@@ -1,0 +1,49 @@
+﻿@page
+@model  project.Pages.IndexModel
+@using project.Models
+@using System.Linq
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    .logo {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    .picture {
+        text-align: center;
+        margin-top: 50px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f5f5f5; /* Replace with your desired background color */
+            padding: -4px;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+</style>
+
+<h1>Welcome to the basketball league app</h1>
+
+<div class="logo">
+<img src="https://i.ibb.co/vDx0Xv8/images.png" alt="images" width="70" height="40">
+</div>
+
+<div class="picture ">
+<img src="https://i.ibb.co/Cpcmc9v/images.jpg" alt="images" border="0">
+</div>

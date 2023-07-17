@@ -1,0 +1,78 @@
+@page "/MatchResults"
+@using project.Models
+@model project.Pages.MatchResultsModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .picture {
+        text-align: right;
+        margin-top: 50px;
+        }
+         .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f5f5f5; /* Replace with your desired background color */
+            padding: -4px;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+        h1 {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="picture">
+    <img src="https://i.ibb.co/vDx0Xv8/images.png" alt="images" width="70" height="70">
+    </div>
+    <h1> Match Results</h1>
+    <div class="container">
+        <div class="results">
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Home Team</th>
+                        <th>&nbsp;&nbsp;Away Team&nbsp;&nbsp;</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var matchResult in Model.MatchResults)
+                    {
+                        <tr>
+                            <td>@matchResult.Team1Name</td>
+                            <td>@matchResult.Team2Name</td>
+                            <td>@matchResult.Team1Score - @matchResult.Team2Score</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#resultsTable').DataTable();
+        });
+    </script>
+</body>
+</html>
+
+      
+
+
+
+
+    

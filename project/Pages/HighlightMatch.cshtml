@@ -1,0 +1,29 @@
+@page
+@model project.Pages.HighlightMatchModel
+@using project.Models
+
+<style>
+ body {
+        background-color: black;
+        color: white;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f5f5f5; /* Replace with your desired background color */
+            padding: -4px;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+</style>
+
+<h2>Highlight Match</h2>
+@if (Model.HighlightMatch != null)
+{
+    <p>Home Team: @Model.HighlightMatch.Team1Name</p>
+    <p>Away Team: @Model.HighlightMatch.Team2Name</p>
+    <p>Score: @Model.HighlightMatch.Team1Score - @Model.HighlightMatch.Team2Score</p>
+}

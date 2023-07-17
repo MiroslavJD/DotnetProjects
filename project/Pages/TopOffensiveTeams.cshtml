@@ -1,0 +1,65 @@
+@page
+@model project.Pages.TopOffensiveTeamsModel
+@using project.Models
+
+<style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .picture {
+        text-align: right;
+        margin-top: 50px;
+        }
+         .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f5f5f5; /* Replace with your desired background color */
+            padding: -4px;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+</style>
+<div class="picture">
+    <img src="https://i.ibb.co/vDx0Xv8/images.png" alt="images" width="70" height="70">
+    </div>
+<h2>Top Offensive Teams</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Team Name</th>
+            <th>Total Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var team in Model.TopOffensiveTeams)
+        {
+            <tr>
+                <td>@team.Name</td>
+                <td>@team.TotalPoints</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Top Defensive Teams</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Team Name</th>
+            <th>Opponent Total Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var team in Model.TopDefensiveTeams)
+        {
+            <tr>
+                <td>@team.Name</td>
+                <td>@team.OpponentTotalPoints</td>
+            </tr>
+        }
+    </tbody>
+</table>
